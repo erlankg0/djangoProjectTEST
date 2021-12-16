@@ -1,0 +1,31 @@
+{% extends 'app/index.html' %}
+{% csrf_token %}
+{% block content %}
+    <form method="get" class="form-row">
+        {{ filters.form }}
+        <input type="submit" value="PRESS FILTER" class="button">
+    </form>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Название</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Дистанция</th>
+            <th scope="col">Дaта</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sap in filters.qs %}
+
+
+
+            <tr>
+                <th scope="row">{{ sap }}</th>
+                <td>{{ sap.count }}</td>
+                <td>{{ sap.distance }}</td>
+                <td>{{ sap.date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

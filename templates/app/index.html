@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--CDN BOOTSTRAP -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>TEST WORK</title>
+    <style>
+        .my_cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align-all: center;
+        }
+    </style>
+</head>
+<body>
+<header>
+    {% block header %}
+        {% include 'app/include/header.html' %}
+    {% endblock %}
+</header>
+
+{% block content %}
+    <main class="select2-container--classic">
+        <div class="row">
+            <div class="card">
+                {% for sap in saps %}
+                    <div class="card-body my_cards">
+                        <ul class="list-group">
+                            <li class="list-group-item">Название : {{ sap.name }}</li>
+                            <li class="list-group-item">Количество : {{ sap.count }}</li>
+                            <li class="list-group-item">Дистанция : {{ sap.distance }}</li>
+                            <li class="list-group-item">Дата : {{ sap.date }}</li>
+                        </ul>
+                    </div>
+                    <div class="card-body my_cards ">
+                        <ul class="list-group">
+                            <li class="list-group-item">Название : {{ sap.name }}</li>
+                            <li class="list-group-item">Количество : {{ sap.count }}</li>
+                            <li class="list-group-item">Дистанция : {{ sap.distance }}</li>
+                            <li class="list-group-item">Дата : {{ sap.date }}</li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
+
+<nav aria-label="...">
+
+
+    <ul class="pagination pagination-lg">
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+</nav>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</html>
